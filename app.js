@@ -178,7 +178,6 @@ function operator(value) {
 
 
 function calResult () {
-function calResult () {
     let num1 = parseFloat(firstValue);
     let num2 = parseFloat(secondValue);
     
