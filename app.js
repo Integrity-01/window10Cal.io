@@ -178,58 +178,56 @@ function operator(value) {
 
 
 function calResult () {
+    let num1 = parseFloat(firstValue);
+    let num2 = parseFloat(secondValue);
+    
+    if ((firstValue !== '' && operatorSign !== '') && secondValue === '' ){
+        num2 = num1;
+        let show = num1 + operatorSign  + num2;
+        toCal.textContent = show; 
+        switch (operatorSign){
+            case '+':
+                firstValue = (num1 + num2).toString();
+                break;
+                case '-':
+                    firstValue = (num1 - num2).toString();
+                break;
+                case '*':
+                    firstValue = (num1  * num2).toString();
+                break;
+                case '÷':
+                    firstValue = (num1 / num2).toString();
+                break;     
+                default:
+                    console.log('Not a Number');
+           }
+    } else{
+        switch (operatorSign){
+            case '+':
+                firstValue = (num1 + num2).toString();
+                break;
+                case '-':
+                    firstValue = (num1 - num2).toString();
+                break;
+                case '*':
+                    firstValue = (num1  * num2).toString();
+                break;
+                case '÷':
+                    firstValue = (num1 / num2).toString();
+                break;     
+                default:
+                    console.log('Not a Number');
+           }
+    }
 
-    let num1 = parseFloat(firstValue);
-
-    let num2 = parseFloat(secondValue);
-
-    
-
-    switch (operatorSign){
-
-    case '+':
-
-        firstValue = (num1 + num2).toString();
-
-        break;
-
-        case '-':
-
-            firstValue = (num1 - num2).toString();
-
-        break;
-
-        case '*':
-
-            firstValue = (num1  * num2).toString();
-
-        break;
-
-        case '÷':
-
-            firstValue = (num1 / num2).toString();
-
-        break;     
-
-        default:
-
-            console.log('Not a Number');
-
-   }
-
-
-
-   console.log(` this is my result value ${firstValue}`); 
-
-   valueDisplay.textContent = firstValue;
-
-   operatorSign = '';
-
-   secondValue = '';
-
-   
-
+    
+   console.log(` this is my result value ${firstValue}`); 
+   valueDisplay.textContent = firstValue;
+   operatorSign = '';
+   secondValue = '';
+   
 }
+
 
 
 
